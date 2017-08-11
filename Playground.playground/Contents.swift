@@ -1,5 +1,17 @@
-//: Playground - noun: a place where people can play
+import Buildkite
+import PlaygroundSupport
 
-import UIKit
+PlaygroundPage.current.needsIndefiniteExecution = true
+URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
 
-var str = "Hello, playground"
+let client = Client(token: "c16c53a1289346f23870d30545ada3f19b1a1348")
+let request = Organization.having(slug: "builder")
+client.execute(request) { result in
+    switch result {
+    case let .success(organization):
+        print(organization)
+        
+    case let .failure(error):
+        print(error)
+    }
+}
