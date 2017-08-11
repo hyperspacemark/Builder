@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		39E410DA1ED9179C00EB1B63 /* Buildkite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E410D01ED9179C00EB1B63 /* Buildkite.framework */; };
 		39E410EC1ED91A1C00EB1B63 /* Buildkite.h in Headers */ = {isa = PBXBuildFile; fileRef = 39E410EB1ED91A1C00EB1B63 /* Buildkite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39E4111B1ED9236700EB1B63 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E4111A1ED9236700EB1B63 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		39E4110E1ED91BAA00EB1B63 /* watchOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Base.xcconfig"; sourceTree = "<group>"; };
 		39E4110F1ED91BAA00EB1B63 /* watchOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		39E411101ED91BAA00EB1B63 /* watchOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		39E4111A1ED9236700EB1B63 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E4111B1ED9236700EB1B63 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +198,6 @@
 		39E411191ED9236700EB1B63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39E4111A1ED9236700EB1B63 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
