@@ -367,13 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39E410D51ED9179C00EB1B63 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				39E4111D1ED92A2F00EB1B63 /* Client.swift in Sources */,
 				39978C2A1ED9FE8A009C7825 /* BuildkiteError.swift in Sources */,
 				39978C261ED9FE2D009C7825 /* Request.swift in Sources */,
@@ -391,6 +384,13 @@
 				39978C2E1ED9FEC4009C7825 /* Organization.swift in Sources */,
 				39BF17D91F3D4C1C008392E4 /* API.swift in Sources */,
 				39CBFE5C1EDA1C3400F53C2D /* Endpoints.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39E410D51ED9179C00EB1B63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
