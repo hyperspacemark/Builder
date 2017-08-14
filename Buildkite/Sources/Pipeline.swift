@@ -1,3 +1,5 @@
+import Foundation
+
 public struct Pipeline: Decodable {
     public let id: ID<Pipeline>
     public let url: URL

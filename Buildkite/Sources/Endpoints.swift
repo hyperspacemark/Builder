@@ -1,3 +1,5 @@
+import Foundation
+
 public extension Organization {
     public static var all: Request<[Organization]> {
         return Request(method: .get, path: "/v2/organizations")

@@ -1,3 +1,5 @@
+import Foundation
+
 public struct Emoji: Decodable {
     public let name: String
     public let url: URL

@@ -1,3 +1,5 @@
+import Foundation
+
 public struct Job: Decodable {
     public let id: ID<Job>
     public let type: String

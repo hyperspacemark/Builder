@@ -1,3 +1,5 @@
+import Foundation
+
 public struct Log: Decodable {
     public let url: URL
     public let content: String

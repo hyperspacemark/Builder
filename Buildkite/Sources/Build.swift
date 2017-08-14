@@ -1,3 +1,5 @@
+import Foundation
+
 public struct Build: Decodable {
     public let id: ID<Build>
     public let url: URL

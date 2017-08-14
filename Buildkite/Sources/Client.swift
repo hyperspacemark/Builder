@@ -17,15 +17,17 @@ public final class Client {
         let urlRequest = try! self.urlRequest(for: request)
 
         let task = urlSession.dataTask(with: urlRequest) { data, response, error in
-            switch (data, response, error) {
-            case let (data?, response as HTTPURLResponse, nil):
-                completion(self.decode(data: data, response: response))
+            DispatchQueue.main.async {
+                switch (data, response, error) {
+                case let (data?, response as HTTPURLResponse, nil):
+                    completion(self.decode(data: data, response: response))
 
-            case let (nil, _, error?):
-                completion(.failure(.urlSession(error)))
+                case let (nil, _, error?):
+                    completion(.failure(.urlSession(error)))
 
-            default:
-                completion(.failure(.unknown))
+                default:
+                    completion(.failure(.unknown))
+                }
             }
         }
 

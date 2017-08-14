@@ -1,3 +1,5 @@
+import Foundation
+
 public struct PipelineProvider {
     public struct BuildTriggers: OptionSet {
         public static var pullRequests = BuildTriggers(rawValue: 1 << 0)

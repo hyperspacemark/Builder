@@ -24,7 +24,6 @@
 		39BF17D91F3D4C1C008392E4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BF17D81F3D4C1C008392E4 /* API.swift */; };
 		39CBFE5C1EDA1C3400F53C2D /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBFE5B1EDA1C3400F53C2D /* Endpoints.swift */; };
 		39E410DA1ED9179C00EB1B63 /* Buildkite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E410D01ED9179C00EB1B63 /* Buildkite.framework */; };
-		39E410EC1ED91A1C00EB1B63 /* Buildkite.h in Headers */ = {isa = PBXBuildFile; fileRef = 39E410EB1ED91A1C00EB1B63 /* Buildkite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39E4111D1ED92A2F00EB1B63 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4111C1ED92A2F00EB1B63 /* Client.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		39CBFE5B1EDA1C3400F53C2D /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		39E410D01ED9179C00EB1B63 /* Buildkite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Buildkite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E410D91ED9179C00EB1B63 /* BuildkiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildkiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39E410EB1ED91A1C00EB1B63 /* Buildkite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buildkite.h; sourceTree = "<group>"; };
 		39E410F11ED91BAA00EB1B63 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		39E410F31ED91BAA00EB1B63 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		39E410F41ED91BAA00EB1B63 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				39BF17D81F3D4C1C008392E4 /* API.swift */,
 				39B6B33A1EE2737500599FF8 /* Artifact.swift */,
 				39B6B3321EE26AE300599FF8 /* Build.swift */,
-				39E410EB1ED91A1C00EB1B63 /* Buildkite.h */,
 				39978C291ED9FE8A009C7825 /* BuildkiteError.swift */,
 				39E4111C1ED92A2F00EB1B63 /* Client.swift */,
 				39B6B33C1EE274BF00599FF8 /* Emoji.swift */,
@@ -260,7 +257,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E410EC1ED91A1C00EB1B63 /* Buildkite.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
