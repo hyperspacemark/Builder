@@ -134,7 +134,7 @@ public extension Pipeline {
 }
 
 public extension User {
-    public var current: Request<User> {
+    public static var current: Request<User> {
         return Request(method: .get, path: "/v2/user")
     }
     
