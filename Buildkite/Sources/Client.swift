@@ -8,7 +8,7 @@ public final class Client {
         case unknown
     }
 
-    public init(token: String? = nil, urlSession: URLSession = .shared) {
+    public init(token: String, urlSession: URLSession = .shared) {
         self.token = token
         self.urlSession = urlSession
     }
@@ -34,7 +34,7 @@ public final class Client {
         task.resume()
     }
 
-    private let token: String?
+    private let token: String
     private let urlSession: URLSession
     private let jsonEncoder = JSONEncoder()
     private let jsonDecoder: JSONDecoder = {
@@ -54,10 +54,7 @@ public final class Client {
         var urlRequest = URLRequest(url: url(for: request))
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.acceptContentType(API.contentType)
-
-        if let token = token {
-            urlRequest.authorize(usingBearerToken: token)
-        }
+        urlRequest.authorize(usingBearerToken: token)
 
         if let body = request.body {
             urlRequest.httpBody = try jsonEncoder.encode(body)
