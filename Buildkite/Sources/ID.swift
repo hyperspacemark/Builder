@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ID<Tag>: RawRepresentable, Decodable {
+public struct ID<Tag>: RawRepresentable, Codable {
     public let rawValue: String
 
     public init?(rawValue: String) {
