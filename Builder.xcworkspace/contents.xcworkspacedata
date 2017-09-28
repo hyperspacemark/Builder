@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Playground.playground">
+      location = "group:Builder/Builder.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Buildkite/Buildkite.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Playground.playground">
    </FileRef>
 </Workspace>
