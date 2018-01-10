@@ -1,6 +1,6 @@
 import UIKit
 
-final class SignInViewController: UIViewController, SignInUI {
+final class SignInViewController: UIViewController {
 
     var tokenInputChanged: ((String?) -> Void)?
     var tokenSubmitted: (() -> Void)?

@@ -1,23 +1,9 @@
 import UIKit
 import Buildkite
 
-protocol ServiceLocator {
-    var signOutService: SignOutServiceProtocol { get }
-}
-
-protocol SignOutServiceProtocol {
-    func signOut()
-}
-
 @UIApplicationMain
-final class AppDelegate: UIResponder, UIApplicationDelegate, ServiceLocator {
-    var window: UIWindow?
-
-    var signOutService: SignOutServiceProtocol {
-        return appController
-    }
-
-    private lazy var appController: AppController = AppController()
+final class AppDelegate: UIResponder, UIApplicationDelegate {
+    lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -25,7 +11,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate, ServiceLocator {
 
         AppEnvironment.restore(from: AppEnvironment.current.environmentStore)
 
-        window = appController.launch(withOptions: launchOptions)
+        window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
         
         return true

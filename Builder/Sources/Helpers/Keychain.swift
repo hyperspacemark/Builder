@@ -50,7 +50,7 @@ final class Keychain {
                 query[kSecValueData] = data
 
                 var result: AnyObject?
-                let status = SecItemAdd(query as CFDictionary, &result)
+                SecItemAdd(query as CFDictionary, &result)
             }
         }
     }
