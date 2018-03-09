@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Pipeline: Decodable {
+public struct Pipeline: Codable {
     public let id: ID<Pipeline>
     public let url: URL
     public let webURL: URL

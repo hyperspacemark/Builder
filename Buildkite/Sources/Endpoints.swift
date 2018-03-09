@@ -17,6 +17,10 @@ public extension Organization {
         return Request(method: .get, path: "/v2/organizations/\(slug)/pipelines")
     }
 
+    public func pipeline(havingSlug pipelineSlug: String) -> Request<Pipeline> {
+        return Request(method: .get, path: "/v2/organizations/\(slug)/pipelines/\(pipelineSlug)")
+    }
+
     public var builds: Request<[Build]> {
         return Request(method: .get, path: "/v2/organizations/\(slug)/builds")
     }
@@ -124,12 +128,6 @@ public extension Organization {
 
     public var emojis: Request<[Emoji]> {
         return Request(method: .get, path: "/v2/organizations/\(slug)/emojis")
-    }
-}
-
-public extension Pipeline {
-    public static func having(slug: String, in organization: Organization) -> Request<Pipeline> {
-        return Request(method: .get, path: "/v2/organizations/\(organization.slug)/pipelines/\(slug)")
     }
 }
 

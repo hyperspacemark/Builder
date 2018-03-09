@@ -1,77 +1,68 @@
 import UIKit
+import Buildkite
+
+protocol SignInViewControllerDelegate: class {
+    func signInViewController(_ viewController: SignInViewController, didSignInAs user: User, withToken token: String, defaultOrganization: Organization)
+}
 
 final class SignInViewController: UIViewController {
 
-    var tokenInputChanged: ((String?) -> Void)?
-    var tokenSubmitted: (() -> Void)?
+    weak var delegate: SignInViewControllerDelegate?
+
+    init(factory: SignInFactoryProtocol = SignInFactory()) {
+        self.factory = factory
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        embed(_navigationController)
 
-        let stackView = UIStackView(arrangedSubviews: [textField, signInButton, activityIndicator])
-        stackView.axis = .vertical
-        stackView.spacing = UIStackView.spacingUseSystem
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
-
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
-        ])
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        updateActivityIndicator(isAnimating: false)
-    }
-
-    func updateActivityIndicator(isAnimating: Bool) {
-        if isAnimating {
-            activityIndicator.startAnimating()
-            signInButton.isHidden = true
-        } else {
-            activityIndicator.stopAnimating()
-            signInButton.isHidden = false
-        }
+        let tokenAuthenticationViewController = TokenAuthenticationViewController(authenticator: factory.makeAuthenticator())
+        tokenAuthenticationViewController.delegate = self
+        _navigationController.pushViewController(tokenAuthenticationViewController, animated: false)
     }
 
     // MARK: Private
 
-    private lazy var textField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Buildkite access token…"
-        textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
-        return textField
-    }()
-
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        indicator.hidesWhenStopped = true
-        return indicator
-    }()
-
-    private lazy var signInButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.titleLabel?.font = .preferredFont(forTextStyle: .title3)
-        button.setTitle("Sign In", for: .normal)
-        button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
-        return button
-    }()
-
-    @objc
-    private func textFieldEditingChanged() {
-        tokenInputChanged?(textField.text)
+    private enum State {
+        case authenticatingToken
+        case selectingOrganization(user: User, token: String)
+        case signedIn(user: User, token: String, organization: Organization)
     }
 
-    @objc
-    private func signInButtonTapped() {
-        tokenSubmitted?()
+    private var state: State = .authenticatingToken
+    private let factory: SignInFactoryProtocol
+    private let _navigationController = UINavigationController()
+}
+
+extension SignInViewController: TokenAuthenticationViewControllerDelegate {
+    func tokenAuthenticationViewController(_ viewController: TokenAuthenticationViewController, didAuthenticate user: User, usingToken token: String) {
+        let api = Client(token: token)
+        let factory = OrganizationsFactory(api: api)
+
+        state = .selectingOrganization(user: user, token: token)
+
+        let viewController = factory.makeOrganizationListViewController()
+        viewController.delegate = self
+        _navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+extension SignInViewController: OrganizationListViewControllerDelegate {
+    func organizationListViewController(_ viewController: OrganizationListViewController, didSelect organization: Organization) {
+        guard case let .selectingOrganization(user, token) = state else {
+            return
+        }
+
+        state = .signedIn(user: user, token: token, organization: organization)
+        delegate?.signInViewController(self, didSignInAs: user, withToken: token, defaultOrganization: organization)
     }
 }

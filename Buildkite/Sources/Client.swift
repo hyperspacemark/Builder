@@ -1,5 +1,21 @@
 import Foundation
 
+public protocol RequestAuthenticator {
+    func authenticate(_ request: inout URLRequest) throws
+}
+
+final class AnyRequestAuthenticator: RequestAuthenticator {
+    init(_ authenticate: @escaping (inout URLRequest) throws -> Void) {
+        self._authenticate = authenticate
+    }
+
+    func authenticate(_ request: inout URLRequest) throws {
+        try _authenticate(&request)
+    }
+
+    private let _authenticate: (inout URLRequest) throws -> Void
+}
+
 public final class Client {
     public enum Error: Swift.Error {
         case urlSession(Swift.Error)
@@ -8,12 +24,36 @@ public final class Client {
         case unknown
     }
 
-    public init(token: String, urlSession: URLSession = .shared) {
-        self.token = token
+    public enum Authentication {
+        case token(String)
+        case basic(username: String, password: String)
+    }
+
+    public final class RequestToken {
+        init(task: URLSessionTask) {
+            self.task = task
+        }
+
+        public func cancel() {
+            task.cancel()
+        }
+
+        private let task: URLSessionTask
+    }
+
+    public init(authenticator: RequestAuthenticator, urlSession: URLSession = .shared) {
+        self.authenticator = authenticator
         self.urlSession = urlSession
     }
 
-    public func execute<Value>(_ request: Request<Value>, completion: @escaping (Result<Value, Error>) -> Void) where Value: Decodable {
+    public convenience init(token: String, urlSession: URLSession = .shared) {
+        let authenticator = AnyRequestAuthenticator { $0.authorize(usingBearerToken: token) }
+        self.init(authenticator: authenticator, urlSession: urlSession)
+    }
+
+    @discardableResult
+    public func request<Value>(_ request: Request<Value>, completion: @escaping (Result<Value, Client.Error>) -> Void) -> RequestToken
+        where Value: Decodable {
         let urlRequest = try! self.urlRequest(for: request)
 
         let task = urlSession.dataTask(with: urlRequest) { data, response, error in
@@ -32,9 +72,10 @@ public final class Client {
         }
 
         task.resume()
+            return RequestToken(task: task)
     }
 
-    private let token: String
+    private let authenticator: RequestAuthenticator
     private let urlSession: URLSession
     private let jsonEncoder = JSONEncoder()
     private let jsonDecoder: JSONDecoder = {
@@ -54,7 +95,8 @@ public final class Client {
         var urlRequest = URLRequest(url: url(for: request))
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.acceptContentType(API.contentType)
-        urlRequest.authorize(usingBearerToken: token)
+
+        try authenticator.authenticate(&urlRequest)
 
         if let body = request.body {
             urlRequest.httpBody = try jsonEncoder.encode(body)

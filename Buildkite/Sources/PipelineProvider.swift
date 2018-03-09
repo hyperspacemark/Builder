@@ -42,7 +42,7 @@ extension PipelineProvider {
     }
 }
 
-extension PipelineProvider: Decodable {
+extension PipelineProvider: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(ID<PipelineProvider>.self, forKey: .id)
@@ -55,6 +55,16 @@ extension PipelineProvider: Decodable {
         publishSettings = PublishSettings(from: settings)
     }
 
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(webhookURL, forKey: .webhookURL)
+
+        let settings = Settings(publishCommitStatus: publishSettings.contains(.commitStatus), publishCommitStatusPerStep: publishSettings.contains(.commitStatusPerStep), buildPullRequests: buildTriggers.contains(.pullRequests), buildPullRequestForks: buildTriggers.contains(.pullRequestsFromForks), buildTags: buildTriggers.contains(.tags), repository: repository, triggerMode: triggerMode)
+
+        try container.encode(settings, forKey: .settings)
+    }
+
     private enum CodingKeys: String, CodingKey {
         case id
         case webhookURL = "webhook_url"
@@ -63,7 +73,7 @@ extension PipelineProvider: Decodable {
 }
 
 private extension PipelineProvider {
-    struct Settings: Decodable {
+    struct Settings: Codable {
         enum CodingKeys: String, CodingKey {
             case publishCommitStatus = "publish_commit_status"
             case publishCommitStatusPerStep = "publish_commit_status_per_step"

@@ -1,46 +1,7 @@
 import Foundation
 import struct Buildkite.User
+import struct Buildkite.Organization
 import class Buildkite.Client
-
-final class TokenStore {
-    private let keychain = Keychain(service: KeychainIdentifier.service)
-
-    private enum KeychainIdentifier {
-        static let service = "com.markadams.Builder"
-        static let account = "buildkite.api.token"
-    }
-
-    var token: String? {
-        get {
-            return keychain[account: KeychainIdentifier.account]
-        }
-
-        set {
-            keychain[account: KeychainIdentifier.account] = newValue
-        }
-    }
-}
-
-struct UserSession {
-    let user: User
-    let client: Client
-}
-
-struct Environment {
-    let userSession: UserSession?
-    let tokenStore: TokenStore
-    let environmentStore: EnvironmentStoreProtocol
-
-    init(
-        userSession: UserSession? = nil,
-        tokenStore: TokenStore = TokenStore(),
-        environmentStore: EnvironmentStoreProtocol = EnvironmentStore()
-    ) {
-        self.userSession = userSession
-        self.tokenStore = tokenStore
-        self.environmentStore = environmentStore
-    }
-}
 
 struct AppEnvironment {
     static var stack: [Environment] = [Environment()]
@@ -69,7 +30,8 @@ struct AppEnvironment {
     static func replaceCurrent(
         userSession: UserSession? = nil,
         tokenStore: TokenStore = TokenStore(),
-        environmentStore: EnvironmentStoreProtocol = EnvironmentStore()) {
+        environmentStore: EnvironmentStore = EnvironmentCache()
+    ) {
 
         let environment =  Environment(userSession: userSession,
                                        tokenStore: tokenStore,
@@ -77,9 +39,11 @@ struct AppEnvironment {
         replaceCurrent(with: environment)
     }
 
-    static func signIn(user: User, token: String) {
-        replaceCurrent(userSession: UserSession(user: user, client: Client(token: token)))
+    static func signIn(user: User, token: String, organization: Organization) -> UserSession {
+        let userSession = UserSession(user: user, client: Client(token: token), organization: organization)
+        replaceCurrent(userSession: userSession)
         current.tokenStore.token = token
+        return userSession
     }
 
     static func signOut() {
@@ -87,57 +51,31 @@ struct AppEnvironment {
         current.tokenStore.token = nil
     }
 
-    static func restore(from environmentStore: EnvironmentStoreProtocol) {
-        if let token = current.tokenStore.token, let user = environmentStore.currentUser {
-            let client = Client(token: token)
-            replaceCurrent(userSession: UserSession(user: user, client: client))
-        } else {
+    static func selectOrganization(_ organization: Organization) {
+        guard let userSession = current.userSession else {
+            preconditionFailure("Expected user session to not be nil.")
+        }
+
+        let newSession = UserSession(user: userSession.user, client: userSession.client, organization: organization)
+        replaceCurrent(userSession: newSession)
+        save(current, to: current.environmentStore)
+    }
+
+    static func restore(from environmentStore: EnvironmentStore) {
+        guard let token = current.tokenStore.token,
+            let user = environmentStore.currentUser,
+            let organization = environmentStore.selectedOrganization else {
             replaceCurrent(userSession: nil)
+                return
         }
+
+        let client = Client(token: token)
+        let userSession = UserSession(user: user, client: client, organization: organization)
+        replaceCurrent(userSession: userSession)
     }
 
-    static func save(_ environment: Environment, to environmentStore: EnvironmentStoreProtocol) {
+    static func save(_ environment: Environment, to environmentStore: EnvironmentStore) {
         environmentStore.currentUser = environment.userSession?.user
-    }
-}
-
-protocol KeyValueStore {
-    func dictionary(forKey defaultName: String) -> [String: Any]?
-    func data(forKey defaultName: String) -> Data?
-
-    func set(_ value: Any?, forKey defaultName: String)
-}
-
-extension UserDefaults: KeyValueStore {}
-
-protocol EnvironmentStoreProtocol: class {
-    var currentUser: User? { get set }
-}
-
-final class EnvironmentStore: EnvironmentStoreProtocol {
-    init(keyValueStore: KeyValueStore = UserDefaults.standard) {
-        self.keyValueStore = keyValueStore
-    }
-
-    var currentUser: User? {
-        get {
-            return keyValueStore.data(forKey: Keys.currentUser).flatMap { data in
-                try? jsonDecoder.decode(User.self, from: data)
-            }
-        }
-
-        set {
-            let data = newValue.flatMap { try? jsonEncoder.encode($0) }
-            keyValueStore.set(data, forKey: Keys.currentUser)
-        }
-    }
-
-    private let keyValueStore: KeyValueStore
-    private let jsonEncoder = JSONEncoder()
-    private let jsonDecoder = JSONDecoder()
-
-    private enum Keys {
-        static let root = "com.markadams.builder.environment"
-        static let currentUser = "com.markadams.builder.environment.currentUser"
+        environmentStore.selectedOrganization = environment.userSession?.organization
     }
 }

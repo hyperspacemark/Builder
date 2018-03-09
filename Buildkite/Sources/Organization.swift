@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Organization: Decodable {
+public struct Organization: Codable {
     public let id: ID<Organization>
     public let name: String
     public let slug: String

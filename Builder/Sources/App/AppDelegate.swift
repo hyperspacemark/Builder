@@ -7,7 +7,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        AppEnvironment.current.tokenStore.token = "c16c53a1289346f23870d30545ada3f19b1a1348"
+//        let token = "c16c53a1289346f23870d30545ada3f19b1a1348"
+//        AppEnvironment.current.tokenStore.token = token
 
         AppEnvironment.restore(from: AppEnvironment.current.environmentStore)
 
