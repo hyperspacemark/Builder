@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ID<Tag>: RawRepresentable, Codable {
+public struct ID<Tag>: RawRepresentable, Codable, Hashable {
     public let rawValue: String
 
     public init?(rawValue: String) {
@@ -11,15 +11,5 @@ public struct ID<Tag>: RawRepresentable, Codable {
 extension ID: ExpressibleByStringLiteral {
     public init(stringLiteral extendedGraphemeClusterLiteral: String) {
         self.rawValue = extendedGraphemeClusterLiteral
-    }
-}
-
-extension ID: Hashable {
-    public var hashValue: Int {
-        return rawValue.hashValue
-    }
-
-    public static func ==(lhs: ID, rhs: ID) -> Bool {
-        return lhs.rawValue == rhs.rawValue
     }
 }

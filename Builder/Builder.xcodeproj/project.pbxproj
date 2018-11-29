@@ -8,51 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		390FFEC920148F3D001CE95E /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390FFEC820148F3D001CE95E /* StorageTests.swift */; };
-		390FFED620149709001CE95E /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390FFED520149709001CE95E /* DiskCache.swift */; };
 		391756961F46C3FF0047D3CE /* SectionedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391756931F46C3FF0047D3CE /* SectionedValues.swift */; };
 		391756971F46C3FF0047D3CE /* Dwifft+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391756941F46C3FF0047D3CE /* Dwifft+UIKit.swift */; };
 		391756981F46C3FF0047D3CE /* Dwifft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391756951F46C3FF0047D3CE /* Dwifft.swift */; };
 		3917569A1F46D5A40047D3CE /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391756991F46D5A40047D3CE /* TableViewDataSource.swift */; };
 		3917569C1F46D7D50047D3CE /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3917569B1F46D7D50047D3CE /* Configurable.swift */; };
-		3926CC371F49697500930A79 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926CC361F49697500930A79 /* SignInViewController.swift */; };
-		3926CC391F49820C00930A79 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926CC381F49820C00930A79 /* RootViewController.swift */; };
-		3926CC3D1F4982AB00930A79 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926CC3C1F4982AB00930A79 /* AppEnvironment.swift */; };
 		3926CC5E1F4A2AA200930A79 /* UIResponder-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926CC5D1F4A2AA200930A79 /* UIResponder-Extensions.swift */; };
-		3927E9FF20390B2F005FC00D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927E9FE20390B2F005FC00D /* DataStore.swift */; };
 		392E6B461F3D97FB00C85D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E6B3E1F3D97FB00C85D54 /* AppDelegate.swift */; };
-		392E6B4B1F3D97FB00C85D54 /* OrganizationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E6B451F3D97FB00C85D54 /* OrganizationListViewController.swift */; };
 		392E6B551F3D984200C85D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 392E6B521F3D984200C85D54 /* Assets.xcassets */; };
 		392E6B5B1F3D986600C85D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 392E6B581F3D986600C85D54 /* LaunchScreen.storyboard */; };
 		392E6B5F1F3D998300C85D54 /* Buildkite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392E6B5E1F3D998300C85D54 /* Buildkite.framework */; };
-		3935BCFC2051168300217164 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935BCFB2051168300217164 /* SearchResultsController.swift */; };
-		393D8A35200D672F007F39DA /* PipelineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D8A34200D672F007F39DA /* PipelineListViewController.swift */; };
-		393D8A37200D67CD007F39DA /* PipelineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D8A36200D67CD007F39DA /* PipelineDetailViewController.swift */; };
-		393D8A39200D6999007F39DA /* AgentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D8A38200D6999007F39DA /* AgentListViewController.swift */; };
-		393D8A3B200D69A2007F39DA /* AgentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D8A3A200D69A2007F39DA /* AgentDetailViewController.swift */; };
-		393D8A3D200D6A83007F39DA /* BuildListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D8A3C200D6A83007F39DA /* BuildListViewController.swift */; };
-		393D8A40200D6B3D007F39DA /* BuildDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D8A3F200D6B3D007F39DA /* BuildDetailViewController.swift */; };
 		39494020200DBC6400E6E0F2 /* UIViewController-Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949401F200DBC6400E6E0F2 /* UIViewController-Embed.swift */; };
-		39494024200DC06500E6E0F2 /* SelectOrganizationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39494023200DC06500E6E0F2 /* SelectOrganizationFactory.swift */; };
-		39494026200DC17500E6E0F2 /* SignInFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39494025200DC17500E6E0F2 /* SignInFactory.swift */; };
 		394D8C5F1F4A36950065241B /* UITableView-Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D8C5E1F4A36950065241B /* UITableView-Reusable.swift */; };
 		39748BCF1F4164C600F564A9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39748BCE1F4164C600F564A9 /* Reusable.swift */; };
-		3979D247200D8652002D1EB5 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D246200D8652002D1EB5 /* Environment.swift */; };
-		3979D249200D869C002D1EB5 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D248200D869C002D1EB5 /* TokenStore.swift */; };
-		3979D24B200D86B2002D1EB5 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D24A200D86B2002D1EB5 /* UserSession.swift */; };
-		3979D24D200D86CA002D1EB5 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D24C200D86CA002D1EB5 /* KeyValueStore.swift */; };
-		3979D24F200D86F1002D1EB5 /* EnvironmentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D24E200D86F1002D1EB5 /* EnvironmentStore.swift */; };
-		3979D251200D9CB5002D1EB5 /* DashboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D250200D9CB5002D1EB5 /* DashboardFactory.swift */; };
-		3979D254200DB805002D1EB5 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D253200DB805002D1EB5 /* UserDetailViewController.swift */; };
-		3979D256200DB96C002D1EB5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979D255200DB96C002D1EB5 /* UserViewController.swift */; };
 		399992AB1F490AAE0041EDB4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399992AA1F490AAE0041EDB4 /* Keychain.swift */; };
 		39ABEAF4200C76B0001EFF86 /* Array-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABEAF3200C76B0001EFF86 /* Array-Extensions.swift */; };
 		39ABEAF6200C7755001EFF86 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABEAF5200C7755001EFF86 /* API.swift */; };
-		39ABEAF9200C7C53001EFF86 /* PipelinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABEAF8200C7C53001EFF86 /* PipelinesViewController.swift */; };
-		39ABEAFD200C7E32001EFF86 /* AgentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABEAFC200C7E32001EFF86 /* AgentsViewController.swift */; };
-		39ABEB00200C7E5C001EFF86 /* BuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABEAFF200C7E5C001EFF86 /* BuildsViewController.swift */; };
-		39ABEB03200C8646001EFF86 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABEB02200C8646001EFF86 /* DashboardViewController.swift */; };
-		39ABEB05200C9BB0001EFF86 /* TokenAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABEB04200C9BB0001EFF86 /* TokenAuthenticator.swift */; };
-		39B4105B20246337003B7DE9 /* TokenAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B4105A20246337003B7DE9 /* TokenAuthenticationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,20 +40,14 @@
 		390FFEC620148F3D001CE95E /* BuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		390FFEC820148F3D001CE95E /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
 		390FFED420149478001CE95E /* BuilderTestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BuilderTestsInfo.plist; path = Builder.xcodeproj/BuilderTestsInfo.plist; sourceTree = SOURCE_ROOT; };
-		390FFED520149709001CE95E /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		391756931F46C3FF0047D3CE /* SectionedValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionedValues.swift; path = ../Carthage/Checkouts/Dwifft/Dwifft/SectionedValues.swift; sourceTree = "<group>"; };
 		391756941F46C3FF0047D3CE /* Dwifft+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dwifft+UIKit.swift"; path = "../Carthage/Checkouts/Dwifft/Dwifft/Dwifft+UIKit.swift"; sourceTree = "<group>"; };
 		391756951F46C3FF0047D3CE /* Dwifft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dwifft.swift; path = ../Carthage/Checkouts/Dwifft/Dwifft/Dwifft.swift; sourceTree = "<group>"; };
 		391756991F46D5A40047D3CE /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		3917569B1F46D7D50047D3CE /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
-		3926CC361F49697500930A79 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		3926CC381F49820C00930A79 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		3926CC3C1F4982AB00930A79 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		3926CC5D1F4A2AA200930A79 /* UIResponder-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder-Extensions.swift"; sourceTree = "<group>"; };
-		3927E9FE20390B2F005FC00D /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		392E6B261F3D975400C85D54 /* Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Builder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		392E6B3E1F3D97FB00C85D54 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		392E6B451F3D97FB00C85D54 /* OrganizationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationListViewController.swift; sourceTree = "<group>"; };
 		392E6B521F3D984200C85D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		392E6B591F3D986600C85D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		392E6B5C1F3D98D800C85D54 /* BuilderInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BuilderInfo.plist; path = Builder.xcodeproj/BuilderInfo.plist; sourceTree = SOURCE_ROOT; };
@@ -112,35 +77,12 @@
 		392E6BCA1F3D9B6500C85D54 /* watchOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Base.xcconfig"; sourceTree = "<group>"; };
 		392E6BCB1F3D9B6500C85D54 /* watchOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		392E6BCC1F3D9B6500C85D54 /* watchOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		3935BCFB2051168300217164 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
-		393D8A34200D672F007F39DA /* PipelineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineListViewController.swift; sourceTree = "<group>"; };
-		393D8A36200D67CD007F39DA /* PipelineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineDetailViewController.swift; sourceTree = "<group>"; };
-		393D8A38200D6999007F39DA /* AgentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentListViewController.swift; sourceTree = "<group>"; };
-		393D8A3A200D69A2007F39DA /* AgentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailViewController.swift; sourceTree = "<group>"; };
-		393D8A3C200D6A83007F39DA /* BuildListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildListViewController.swift; sourceTree = "<group>"; };
-		393D8A3F200D6B3D007F39DA /* BuildDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildDetailViewController.swift; sourceTree = "<group>"; };
 		3949401F200DBC6400E6E0F2 /* UIViewController-Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Embed.swift"; sourceTree = "<group>"; };
-		39494023200DC06500E6E0F2 /* SelectOrganizationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOrganizationFactory.swift; sourceTree = "<group>"; };
-		39494025200DC17500E6E0F2 /* SignInFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFactory.swift; sourceTree = "<group>"; };
 		394D8C5E1F4A36950065241B /* UITableView-Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView-Reusable.swift"; sourceTree = "<group>"; };
 		39748BCE1F4164C600F564A9 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		3979D246200D8652002D1EB5 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		3979D248200D869C002D1EB5 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
-		3979D24A200D86B2002D1EB5 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
-		3979D24C200D86CA002D1EB5 /* KeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
-		3979D24E200D86F1002D1EB5 /* EnvironmentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentStore.swift; sourceTree = "<group>"; };
-		3979D250200D9CB5002D1EB5 /* DashboardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFactory.swift; sourceTree = "<group>"; };
-		3979D253200DB805002D1EB5 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
-		3979D255200DB96C002D1EB5 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		399992AA1F490AAE0041EDB4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		39ABEAF3200C76B0001EFF86 /* Array-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-Extensions.swift"; sourceTree = "<group>"; };
 		39ABEAF5200C7755001EFF86 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		39ABEAF8200C7C53001EFF86 /* PipelinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelinesViewController.swift; sourceTree = "<group>"; };
-		39ABEAFC200C7E32001EFF86 /* AgentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsViewController.swift; sourceTree = "<group>"; };
-		39ABEAFF200C7E5C001EFF86 /* BuildsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsViewController.swift; sourceTree = "<group>"; };
-		39ABEB02200C8646001EFF86 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		39ABEB04200C9BB0001EFF86 /* TokenAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAuthenticator.swift; sourceTree = "<group>"; };
-		39B4105A20246337003B7DE9 /* TokenAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAuthenticationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,12 +185,6 @@
 			children = (
 				394D8C611F4A37780065241B /* App */,
 				394D8C631F4A37AF0065241B /* Sign In */,
-				39ABEB01200C8636001EFF86 /* Dashboard */,
-				394D8C621F4A379A0065241B /* Organizations */,
-				39ABEAF7200C7BFE001EFF86 /* Pipelines */,
-				39ABEAFB200C7E26001EFF86 /* Agents */,
-				393D8A3E200D6B31007F39DA /* Builds */,
-				3979D252200DB7FC002D1EB5 /* User */,
 				394D8C5D1F4A36700065241B /* Helpers */,
 				3926CC5B1F4A2A8100930A79 /* Extensions */,
 				39ABEAF5200C7755001EFF86 /* API.swift */,
@@ -363,16 +299,6 @@
 			path = watchOS;
 			sourceTree = "<group>";
 		};
-		393D8A3E200D6B31007F39DA /* Builds */ = {
-			isa = PBXGroup;
-			children = (
-				39ABEAFF200C7E5C001EFF86 /* BuildsViewController.swift */,
-				393D8A3C200D6A83007F39DA /* BuildListViewController.swift */,
-				393D8A3F200D6B3D007F39DA /* BuildDetailViewController.swift */,
-			);
-			path = Builds;
-			sourceTree = "<group>";
-		};
 		394D8C5D1F4A36700065241B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,47 +322,15 @@
 			isa = PBXGroup;
 			children = (
 				392E6B3E1F3D97FB00C85D54 /* AppDelegate.swift */,
-				3926CC3C1F4982AB00930A79 /* AppEnvironment.swift */,
-				3926CC381F49820C00930A79 /* RootViewController.swift */,
-				3979D246200D8652002D1EB5 /* Environment.swift */,
-				3979D248200D869C002D1EB5 /* TokenStore.swift */,
-				3979D24A200D86B2002D1EB5 /* UserSession.swift */,
-				3979D24C200D86CA002D1EB5 /* KeyValueStore.swift */,
-				3979D24E200D86F1002D1EB5 /* EnvironmentStore.swift */,
-				390FFED520149709001CE95E /* DiskCache.swift */,
-				3927E9FE20390B2F005FC00D /* DataStore.swift */,
-				3935BCFB2051168300217164 /* SearchResultsController.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		394D8C621F4A379A0065241B /* Organizations */ = {
-			isa = PBXGroup;
-			children = (
-				392E6B451F3D97FB00C85D54 /* OrganizationListViewController.swift */,
-				39494023200DC06500E6E0F2 /* SelectOrganizationFactory.swift */,
-			);
-			path = Organizations;
 			sourceTree = "<group>";
 		};
 		394D8C631F4A37AF0065241B /* Sign In */ = {
 			isa = PBXGroup;
 			children = (
-				39494025200DC17500E6E0F2 /* SignInFactory.swift */,
-				3926CC361F49697500930A79 /* SignInViewController.swift */,
-				39B4105A20246337003B7DE9 /* TokenAuthenticationViewController.swift */,
-				39ABEB04200C9BB0001EFF86 /* TokenAuthenticator.swift */,
 			);
 			path = "Sign In";
-			sourceTree = "<group>";
-		};
-		3979D252200DB7FC002D1EB5 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				3979D255200DB96C002D1EB5 /* UserViewController.swift */,
-				3979D253200DB805002D1EB5 /* UserDetailViewController.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		39ABEAF2200C768E001EFF86 /* Swift */ = {
@@ -445,35 +339,6 @@
 				39ABEAF3200C76B0001EFF86 /* Array-Extensions.swift */,
 			);
 			path = Swift;
-			sourceTree = "<group>";
-		};
-		39ABEAF7200C7BFE001EFF86 /* Pipelines */ = {
-			isa = PBXGroup;
-			children = (
-				39ABEAF8200C7C53001EFF86 /* PipelinesViewController.swift */,
-				393D8A34200D672F007F39DA /* PipelineListViewController.swift */,
-				393D8A36200D67CD007F39DA /* PipelineDetailViewController.swift */,
-			);
-			path = Pipelines;
-			sourceTree = "<group>";
-		};
-		39ABEAFB200C7E26001EFF86 /* Agents */ = {
-			isa = PBXGroup;
-			children = (
-				39ABEAFC200C7E32001EFF86 /* AgentsViewController.swift */,
-				393D8A38200D6999007F39DA /* AgentListViewController.swift */,
-				393D8A3A200D69A2007F39DA /* AgentDetailViewController.swift */,
-			);
-			path = Agents;
-			sourceTree = "<group>";
-		};
-		39ABEB01200C8636001EFF86 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				39ABEB02200C8646001EFF86 /* DashboardViewController.swift */,
-				3979D250200D9CB5002D1EB5 /* DashboardFactory.swift */,
-			);
-			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,48 +450,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39ABEAF9200C7C53001EFF86 /* PipelinesViewController.swift in Sources */,
-				3979D254200DB805002D1EB5 /* UserDetailViewController.swift in Sources */,
-				3979D24D200D86CA002D1EB5 /* KeyValueStore.swift in Sources */,
-				3926CC371F49697500930A79 /* SignInViewController.swift in Sources */,
-				393D8A39200D6999007F39DA /* AgentListViewController.swift in Sources */,
-				39ABEB00200C7E5C001EFF86 /* BuildsViewController.swift in Sources */,
-				393D8A37200D67CD007F39DA /* PipelineDetailViewController.swift in Sources */,
-				3927E9FF20390B2F005FC00D /* DataStore.swift in Sources */,
 				39ABEAF6200C7755001EFF86 /* API.swift in Sources */,
-				3979D24B200D86B2002D1EB5 /* UserSession.swift in Sources */,
-				3935BCFC2051168300217164 /* SearchResultsController.swift in Sources */,
 				3917569A1F46D5A40047D3CE /* TableViewDataSource.swift in Sources */,
-				393D8A3D200D6A83007F39DA /* BuildListViewController.swift in Sources */,
 				399992AB1F490AAE0041EDB4 /* Keychain.swift in Sources */,
 				394D8C5F1F4A36950065241B /* UITableView-Reusable.swift in Sources */,
 				39748BCF1F4164C600F564A9 /* Reusable.swift in Sources */,
-				39494026200DC17500E6E0F2 /* SignInFactory.swift in Sources */,
 				39494020200DBC6400E6E0F2 /* UIViewController-Embed.swift in Sources */,
-				3926CC391F49820C00930A79 /* RootViewController.swift in Sources */,
 				392E6B461F3D97FB00C85D54 /* AppDelegate.swift in Sources */,
 				391756981F46C3FF0047D3CE /* Dwifft.swift in Sources */,
-				39ABEAFD200C7E32001EFF86 /* AgentsViewController.swift in Sources */,
-				3979D251200D9CB5002D1EB5 /* DashboardFactory.swift in Sources */,
 				3917569C1F46D7D50047D3CE /* Configurable.swift in Sources */,
 				391756971F46C3FF0047D3CE /* Dwifft+UIKit.swift in Sources */,
-				3979D256200DB96C002D1EB5 /* UserViewController.swift in Sources */,
-				3979D24F200D86F1002D1EB5 /* EnvironmentStore.swift in Sources */,
-				393D8A40200D6B3D007F39DA /* BuildDetailViewController.swift in Sources */,
-				3979D247200D8652002D1EB5 /* Environment.swift in Sources */,
-				390FFED620149709001CE95E /* DiskCache.swift in Sources */,
-				393D8A35200D672F007F39DA /* PipelineListViewController.swift in Sources */,
-				393D8A3B200D69A2007F39DA /* AgentDetailViewController.swift in Sources */,
-				392E6B4B1F3D97FB00C85D54 /* OrganizationListViewController.swift in Sources */,
-				39494024200DC06500E6E0F2 /* SelectOrganizationFactory.swift in Sources */,
 				39ABEAF4200C76B0001EFF86 /* Array-Extensions.swift in Sources */,
 				391756961F46C3FF0047D3CE /* SectionedValues.swift in Sources */,
-				3979D249200D869C002D1EB5 /* TokenStore.swift in Sources */,
-				39B4105B20246337003B7DE9 /* TokenAuthenticationViewController.swift in Sources */,
-				39ABEB03200C8646001EFF86 /* DashboardViewController.swift in Sources */,
 				3926CC5E1F4A2AA200930A79 /* UIResponder-Extensions.swift in Sources */,
-				3926CC3D1F4982AB00930A79 /* AppEnvironment.swift in Sources */,
-				39ABEB05200C9BB0001EFF86 /* TokenAuthenticator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

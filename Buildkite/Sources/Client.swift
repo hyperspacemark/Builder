@@ -99,7 +99,7 @@ public final class Client {
         try authenticator.authenticate(&urlRequest)
 
         if let body = request.body {
-            urlRequest.httpBody = try jsonEncoder.encode(body)
+            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
         }
 
         return urlRequest
